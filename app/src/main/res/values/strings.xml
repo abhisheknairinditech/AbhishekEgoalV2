@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">EGoal</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="todo">TODO</string>
+    <string name="egoal_logo">EGoal Logo</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="stores">Stores</string>
+    <string name="logo_description">Logo Description</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="net_sales">Net Sales</string>
+    <string name="_512">512</string>
+    <string name="_50">50</string>
+</resources>
