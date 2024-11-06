@@ -13,4 +13,14 @@
     <string name="net_sales">Net Sales</string>
     <string name="_512">512</string>
     <string name="_50">50</string>
+    <string name="values_in_millions">* Values in Millions</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="logout">Logout</string>
+    <string name="analytics">Analytics</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="menu_icon_description">Menu Icon Description</string>
+    <string name="top_performer">Top Performer</string>
 </resources>

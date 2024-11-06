@@ -1,0 +1,71 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="5dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tenant_store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic"
+            android:layout_gravity="center"
+            android:text="Store Name"
+            android:textSize="18dp"
+            android:textColor="@color/blue3"/>
+
+        <TextView
+            android:id="@+id/tenant_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tenant Code"
+            android:textSize="16dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/property_mall_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mall Code"
+            android:textSize="16dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/totalNetSales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Net Sale"
+            android:textSize="16dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/totalTransactionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total transaction Count"
+            android:textSize="16dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/tenantGroupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tenant Group Name"
+            android:textSize="16dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/floor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Floor"
+            android:textSize="16dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

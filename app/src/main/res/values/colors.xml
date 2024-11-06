@@ -10,7 +10,7 @@
     <color name="blue4">#4CAAF0</color>
     <color name="white2">#EEF7FA</color>
 
-    <color name="colorPrimary">#024265</color>
+    <color name="colorPrimaryDarkMode">#024265</color>
     <color name="colorPrimaryDark">#024265</color>
     <color name="colorAccent">#05af9b</color>
 
@@ -23,5 +23,6 @@
     <color name="CPP">#EF5350</color>
     <color name="Java">#29B6F6</color>
     <color name="green">#36B827</color>
+
 
 </resources>

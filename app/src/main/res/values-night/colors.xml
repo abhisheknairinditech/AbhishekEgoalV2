@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue1">#0099CB</color>
+    <color name="blue2">#7ECBE5</color>
+    <color name="blue3">#5DB1CC</color>
+    <color name="grey">#A2C2CD</color>
+    <color name="lightblue">#58E2F5</color>
+    <color name="blue4">#4CAAF0</color>
+    <color name="white2">#EEF7FA</color>
+
+    <color name="colorPrimary">#024265</color>
+    <color name="colorPrimaryDark">#024265</color>
+    <color name="colorAccent">#05af9b</color>
+    <color name="colorPrimaryDarkMode">#024265</color>
+
+    <color name="colorAccentDarkMode">#05af9b</color>
+
+    <color name="color_one">#fb7268</color>
+    <color name="color_white">#ededf2</color>
+    <color name="color_two">#E3E0E0</color>
+
+    <color name="R">#FFA726</color>
+    <color name="Python">#66BB6A</color>
+    <color name="CPP">#EF5350</color>
+    <color name="Java">#29B6F6</color>
+    <color name="green">#36B827</color>
+</resources>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="@drawable/egoal_dashboard_bg1"
+        android:scaleType="center" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Section -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_marginBottom="12dp"
+                android:clipToOutline="true"
+                android:elevation="6dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.4"
+                    android:background="@drawable/nav_bar_bg" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:contentDescription="@string/logo_description"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/egoal_logo" />
+
+                <ImageView
+                    android:id="@+id/analytics_menu_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="24dp"
+                    android:contentDescription="Menu Icon Description"
+                    android:src="@drawable/menu_icon" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/analytics_property_autocomplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_box_border"
+                    android:hint="Select Property"
+                    android:minHeight="48dp"
+                    android:padding="6dp"
+                    android:textColorHint="@color/grey" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/analytics_date_range_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_box_border"
+                    android:hint="Select Date Range"
+                    android:minHeight="48dp"
+                    android:padding="6dp"
+                    android:textColorHint="@color/grey" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/analytics_linear"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+
+                    android:text="Start Date"
+                    android:textColor="@color/black" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+
+                    android:text="End Date"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/analytics_start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_box_border"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+
+                <EditText
+                    android:id="@+id/analytics_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_box_border"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+            </LinearLayout>
+
+            <SearchView
+                android:id="@+id/searchViewTenant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@color/white"
+                android:layout_marginRight="50dp"
+                android:queryHint="Search tenant by name" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tenant_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:clipToPadding="false"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

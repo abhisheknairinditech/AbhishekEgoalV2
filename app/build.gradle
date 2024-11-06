@@ -18,7 +18,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -26,6 +27,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
 
+    }
+    buildFeatures {
+        viewBinding true
     }
 
 }
@@ -37,6 +41,11 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.gridlayout
+    implementation libs.firebase.crashlytics.buildtools
+    implementation libs.lifecycle.livedata.ktx
+    implementation libs.lifecycle.viewmodel.ktx
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
@@ -45,10 +54,20 @@ dependencies {
     implementation libs.mpandroidchart
     implementation libs.eazegraph
 //    implementation libs.autoimageslider
+//    implementation libs.autoimageslider
     implementation (libs.multilibrary)
+    implementation libs.viewpager2
+
     implementation libs.library
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation libs.logging.interceptor
+    implementation libs.glide
+    annotationProcessor libs.compiler
+    implementation libs.androidsvg
+//    implementation libs.autoimageslider.v132
+
+
+//    implementation libs.renderscript.v8
 
 }

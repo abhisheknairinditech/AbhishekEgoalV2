@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:background="@drawable/egoal_dashboard_bg1"
+        android:focusable="false"
+        android:scaleType="center" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Section -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_marginBottom="12dp"
+                android:clipToOutline="true"
+                android:elevation="6dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.4"
+                    android:background="@drawable/nav_bar_bg" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/logo_description"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/egoa_android" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="188dp"
+                    android:layout_toStartOf="@id/username"
+                    android:gravity="end"
+                    android:text="Welcome, "
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="100dp"
+                    android:gravity="end"
+                    android:hint="Username"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/menu_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="25dp"
+                    android:contentDescription="@string/menu_icon_description"
+                    android:src="@drawable/menu_icon" />
+            </RelativeLayout>
+
+            <!--             Top Performer Slide View -->
+            <!--            <androidx.viewpager2.widget.ViewPager2-->
+            <com.library.foysaltech.smarteist.autoimageslider.SliderView
+
+                android:id="@+id/topPerformerViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="-10dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="300"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="10dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="2dp"
+                app:sliderIndicatorRadius="1dp"
+                app:sliderIndicatorSelectedColor="@color/colorAccent"
+                app:sliderIndicatorUnselectedColor="@color/grey"
+                app:sliderScrollTimeInSec="3" />
+            <!--            <com.library.foysaltech.smarteist.autoimageslider.SliderView-->
+
+            <!--                android:id="@+id/topPerformerViewPager"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="100dp"-->
+            <!--                android:layout_marginBottom="16dp"-->
+            <!--                app:sliderAnimationDuration="600"-->
+            <!--                app:sliderAutoCycleDirection="back_and_forth"-->
+            <!--                app:sliderIndicatorAnimationDuration="600"-->
+            <!--                app:sliderIndicatorEnabled="true"-->
+            <!--                app:sliderIndicatorGravity="center_horizontal|bottom"-->
+            <!--                app:sliderIndicatorMargin="15dp"-->
+            <!--                app:sliderIndicatorOrientation="horizontal"-->
+            <!--                app:sliderIndicatorPadding="5dp"-->
+            <!--                app:sliderIndicatorRadius="2dp"-->
+            <!--                app:sliderIndicatorSelectedColor="@color/colorAccent"-->
+            <!--                app:sliderIndicatorUnselectedColor="@color/grey"-->
+            <!--                app:sliderScrollTimeInSec="2" />-->
+            <!-- Property and Date Range Filters -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/property_autocomplete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/select_box_border"
+                        android:hint="Select Property"
+                        android:minHeight="48dp"
+                        android:padding="6dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/tenant_autocomplete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/select_box_border"
+                        android:hint="Select Tenants"
+                        android:minHeight="48dp"
+                        android:padding="6dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/date_range_spinner"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_box_border"
+                    android:hint="Select Date Range"
+                    android:minHeight="48dp"
+                    android:padding="6dp"
+                    android:textColorHint="@color/grey" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+
+                    android:text="@string/start_date"
+                    android:textColor="@color/black"
+                    tools:ignore="TextViewEdits" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+
+                    android:text="End Date"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_box_border"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+
+                <EditText
+                    android:id="@+id/end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_box_border"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+            </LinearLayout>
+
+            <!-- Data Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:columnCount="2"
+                android:padding="8dp"
+                android:rowCount="2">
+
+                <!-- Net Sales Box -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/login_edittext"
+                    android:elevation="4dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/values_in_millions"
+                        android:textAlignment="textEnd"
+                        android:textColor="#858181"
+                        android:textSize="8sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/sales" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="4dp"
+                                android:text="Net Sales"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/dashboard_netsales"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="4dp"
+                                android:hint=""
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <!-- Orders Box -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/login_edittext"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/user_visitor" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="4dp"
+                                android:text="Tenants"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/dashboard_tenant"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="4dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+                <!-- Stores Box -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/login_edittext"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/baseline_store" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="4dp"
+                                android:text="Stores"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/dashboard_stores"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="4dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Collections Box -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/login_edittext"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/kiosk" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="4dp"
+                                android:text="Kiosks"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/dashboard_kiosks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="4dp"
+                                android:hint=""
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+            </GridLayout>
+
+            <!-- Sales Analysis -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#FAFAFA"
+                android:elevation="10dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:padding="10dp"
+                            android:text="Sales Analysis"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Month on month"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="* Values in Millions"
+                            android:textAlignment="textEnd"
+                            android:textColor="#858181"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true">
+
+                        <TableLayout
+                            android:id="@+id/salesTable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:divider="?android:attr/dividerVertical"
+                            android:dividerHeight="1dp"
+                            android:padding="8dp"
+                            android:showDividers="middle"
+                            android:stretchColumns="*">
+
+                            <!-- Headers Row -->
+                            <TableRow>
+
+                                <TextView
+                                    android:padding="8dp"
+                                    android:text="Year"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Month headers will be added dynamically here -->
+                            </TableRow>
+
+                            <!-- Previous Year Row -->
+                            <TableRow
+                                android:id="@+id/previousYearRow"
+                                android:background="#E1F5FE">
+                                <!-- The values will be populated dynamically -->
+                            </TableRow>
+
+                            <!-- Current Year Row -->
+                            <TableRow
+                                android:id="@+id/currentYearRow"
+                                android:background="#FFEBEE">
+                                <!-- The values will be populated dynamically -->
+                            </TableRow>
+
+                        </TableLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!--             Top 5 Tenants Graph -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:elevation="4dp"
+                android:padding="8dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Top 5 Tenants"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="By Sales"
+                            android:textColor="@color/black"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                    <!--                 Use a graphical view library like MPAndroidChart -->
+
+                    <com.github.mikephil.charting.charts.BarChart
+
+                        android:id="@+id/top_5_tenants_bar_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_margin="5dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Category Sales"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <!-- Add the dropdown (Spinner) here -->
+                    <Spinner
+                        android:id="@+id/category_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="200dp"
+                        android:padding="10dp" />
+
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/tenants_pie_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp" />
+                    <!-- Use a graphical view library like MPAndroidChart -->
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/legendScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tenants_pie_chart"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/legendLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:orientation="vertical" />
+                    </androidx.core.widget.NestedScrollView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--             Group Sales -->
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:layout_marginTop="8dp"-->
+            <!--                android:layout_marginRight="10dp"-->
+            <!--                android:layout_marginBottom="20dp"-->
+            <!--                android:elevation="4dp"-->
+            <!--                app:cardCornerRadius="10dp">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:padding="10dp"-->
+            <!--                            android:text="Sales Analysis"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="15dp"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:paddingTop="5dp"-->
+            <!--                            android:paddingEnd="5dp"-->
+            <!--                            android:paddingBottom="5dp"-->
+            <!--                            android:text="Year on Year"-->
+            <!--                            android:textSize="12dp"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:padding="10dp"-->
+            <!--                            android:text="Values in Millions"-->
+            <!--                            android:textAlignment="textEnd"-->
+            <!--                            android:textColor="#858181"-->
+            <!--                            android:textSize="10dp" />-->
+            <!--                    </LinearLayout>-->
+
+            <!--                    <TableLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:padding="8dp">-->
+
+            <!--                        <TableRow>-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="Year"-->
+            <!--                                android:textStyle="bold" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="Sales"-->
+            <!--                                android:textStyle="bold" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="YOY"-->
+            <!--                                android:textStyle="bold" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="YTD"-->
+            <!--                                android:textStyle="bold" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="% Change"-->
+            <!--                                android:textStyle="bold" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="MTD"-->
+            <!--                                android:textStyle="bold" />-->
+            <!--                        </TableRow>-->
+
+            <!--                        <TableRow>-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/salesPreviousYear"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="2023" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/ytdPreviousYear"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="537.16" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="-" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/ytdPreviousYear"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="271.40" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="-" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="0" />-->
+            <!--                        </TableRow>-->
+
+            <!--                        <TableRow>-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/salesCurrentYear"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="2024" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/ytdCurrentYear"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="1818.24" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/yoyCurrentYear"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="↑ 238.49%" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/ytdCurrentYear"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="1818.24" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:id="@+id/growthYTD"-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="↑ 569.95%" />-->
+
+            <!--                            <TextView-->
+            <!--                                android:layout_weight="1"-->
+            <!--                                android:text="0" />-->
+            <!--                        </TableRow>-->
+            <!--                    </TableLayout>-->
+            <!--                </LinearLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!-- Floor Sales Graph -->
+            <!--            <com.google.android.material.card.MaterialCardView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="8dp"-->
+            <!--                android:elevation="4dp"-->
+            <!--                android:padding="8dp">-->
+
+            <!--                &lt;!&ndash;                 Use a graphical view library like MPAndroidChart &ndash;&gt;-->
+            <!--                <com.github.mikephil.charting.charts.BarChart-->
+            <!--                    android:id="@+id/floor_sales_bar_chart"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="200dp"-->
+            <!--                    tools:ignore="MissingClass" />-->
+            <!--            </com.google.android.material.card.MaterialCardView>-->
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
